@@ -1,4 +1,5 @@
-package main.java.ru.coursemodel.course;
+package ru.coursemodel.course;
+
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
