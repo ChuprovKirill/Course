@@ -1,10 +1,10 @@
-package main.java.ru.coursemodel.course;
+package ru.coursemodel.course;
+
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
 public class Student implements Serializable {
-
     private String name;
     private String address;
     private String phone;
@@ -12,14 +12,15 @@ public class Student implements Serializable {
     private Integer recordBookNum;
     private float averageMark;
 
+
     private static int id;
 
     private List<Course> courses = new ArrayList<>();
     private List<PassingCourse> passing = new ArrayList<>();
+    public Student(){};
 
     public Student(String name, String address, String phone, String email) {
         //
-
         if (TaskUtils.isStudentValid(name,address,phone,email)) {
             throw new RuntimeException("Некорректный ввод данных для объекта 'Студент'");
         }
@@ -29,6 +30,7 @@ public class Student implements Serializable {
         this.email = email;
         this.recordBookNum = ++id;
     }
+
 
     public void addStudent(Course course) {
         if (TaskUtils.canUpdateWithObject(course,courses)) {
@@ -86,7 +88,6 @@ public class Student implements Serializable {
         }
         averageMark = (size > 0) ? ((1.0f * sum) / size) : 0;
     }
-
 
     @Override
     public String toString() {

@@ -1,7 +1,10 @@
-package main.java.ru.coursemodel.course;
+package ru.coursemodel.course;
+
 import java.util.List;
-//Данный класс содержит вспомогательные методы проверки корректности ввода данныз для конструкторов и методов.
-//Это позволяет избежать дублирование кода
+
+/**
+ * Created by Chuprov on 06.12.2016.
+ */
 public class TaskUtils {
     public static boolean canUpdateWithObject(Object object, List<?> objects) {
         return (object != null) && !objects.contains(object);

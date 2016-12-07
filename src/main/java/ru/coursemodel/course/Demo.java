@@ -1,4 +1,6 @@
-package main.java.ru.coursemodel.course;
+package ru.coursemodel.course;
+
+
 public class Demo {
     public static void main(String[] args) {
         Course math = new Course("Математика", 1, 10f);
@@ -7,8 +9,10 @@ public class Demo {
         Student petrov = new Student("Петров", "Москва", "+79780512678", "petrov@yandex.ru");
         Student ivanov = new Student("Иванов", "Санкт-Петербург", "+79780512677", "ivanov@yandex.ru");
         petrov.addStudent(math);
-        petrov.getPassingCourse(math).addMark(3);
-        petrov.getPassingCourse(math).addMark(5);
+        petrov.addStudent(chemestry);
+        ivanov.addStudent(math);
+        professor.addCourse(math);
+        ivanov.getPassingCourse(math).addMark(3);
         ivanov.getPassingCourse(math).addMark(4);
         ivanov.getPassingCourse(math).addMark(2);
         ivanov.getPassingCourse(math).addMark(5);
@@ -26,7 +30,3 @@ public class Demo {
 
     }
 }
-
-
-
-

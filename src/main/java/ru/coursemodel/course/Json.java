@@ -1,4 +1,4 @@
-package main.java.ru.coursemodel.course;
+package ru.coursemodel.course;
 
 import java.io.*;
 import java.util.ArrayList;

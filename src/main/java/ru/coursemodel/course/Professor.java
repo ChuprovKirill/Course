@@ -1,4 +1,5 @@
-package main.java.ru.coursemodel.course;
+package ru.coursemodel.course;
+
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
@@ -8,9 +9,11 @@ public class Professor implements Serializable {
     private String address;
     private String phone;
     private Float salary;
+
     private List<Course> courses = new ArrayList<>();
 
     public Professor(String name, String address, String phone, float salary) {
+
         if (TaskUtils.isProfessorValid(name,address,phone,salary)) {
             throw new RuntimeException("Некорректный ввод данных для объекта 'Профессор'");
         }
@@ -21,7 +24,7 @@ public class Professor implements Serializable {
     }
 
     void addCourse(Course course) {
-        if (course!=null&&courses.contains(course)) {
+        if (TaskUtils.canUpdateWithObject(course,courses)) {
             courses.add(course);
         }
     }

@@ -1,4 +1,5 @@
-package main.java.ru.coursemodel.course;
+package ru.coursemodel.course;
+
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
@@ -7,7 +8,6 @@ public class Course implements Serializable {
     private String name;
     private int courseId;
     private float costs;
-
     private List<Professor> professors = new ArrayList<>();
     private List<Student> students = new ArrayList<>();
 
@@ -21,7 +21,7 @@ public class Course implements Serializable {
     }
 
     public void addProfessor(Professor professor) {
-        if ((TaskUtils.canUpdateWithObject(professor,professors))) {
+        if (TaskUtils.canUpdateWithObject(professor,professors)) {
             professors.add(professor);
             professor.addCourse(this);
         }
@@ -63,9 +63,6 @@ public class Course implements Serializable {
                 this.courseId == course.courseId &&
                 Math.abs(this.costs - course.costs) < 1e-6;
     }
-
-
-
 
     @Override
     public String toString() {
